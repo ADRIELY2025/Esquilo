@@ -7,7 +7,7 @@ saveButton.addEventListener('click', async () => {
     };
 
     try {
-        const result = await window.electronAPI.savefornecedor(data);
+        const result = await window.electronAPI.saveFornecedor(data);
         console.log('Salvo com sucesso:', result);
         
     } catch (error) {

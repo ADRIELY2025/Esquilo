@@ -4,13 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Lista de usuario</title>
 </head>
 
-<body>
+<body class="bg-light">
 
-    <button id="voltar-button">Voltar</button>
-    <button id="cadastro-button">Cadastro</button>
+    <div class="container py-5">
+
+        <div class="card shadow">
+            <div class="card-body">
+
+                <h3 class="card-title text-center mb-4">Lista de Usuários</h3>
+
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-secondary" id="voltar-button">Voltar</button>
+                    <button class="btn btn-primary" id="cadastro-button">Cadastro</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
     <script type="module" src="listausuario.js"></script>
 </body>

@@ -36,7 +36,7 @@ fornecedorButton.addEventListener('click', async () => {
 });
 const clienteButton = document.getElementById('cliente-button');
 
-usuarioButton.addEventListener('click', async () => {
+clienteButton.addEventListener('click', async () => {
     try {
         if (!window.electronAPI || typeof window.electronAPI.openPage !== 'function') {
             throw new Error('API do Electron não foi injetada pelo preload');

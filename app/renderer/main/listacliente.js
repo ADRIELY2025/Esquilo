@@ -17,7 +17,7 @@ cadastroButton.addEventListener('click', async () => {
         if (!window.electronAPI || typeof window.electronAPI.openPage !== 'function') {
             throw new Error('API do Electron não foi injetada pelo preload');
         }
-        await window.electronAPI.openPage('produto.html');
+        await window.electronAPI.openPage('cliente.html');
     } catch (error) {
         console.error('Erro ao abrir a janela de cadastro de produtos:', error);
     }

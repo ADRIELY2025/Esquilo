@@ -4,24 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Cliente</title>
 </head>
 
-<body>
-    <button onclick="window.electronAPI.goHome()">Home</button>
-    <button onclick="window.electronAPI.openPage('listaproduto.html')">Lista de produtos</button>
-    <br>
-    <br>
-    <input type="text" placeholder="Nome do produto" id="name">
-    <br>
-    <br>
-    <input type="text" placeholder="Valor do produto" id="price">
-    <br>
-    <br>
-    <br>
-    <button id="save-button">Salvar Produto</button>
+<body class="bg-light">
 
-    <script src="produto.js"></script>
+    <div class="container py-5">
+
+        <div class="d-flex justify-content-between mb-4">
+            <button class="btn btn-outline-primary" onclick="window.electronAPI.goHome()">Home</button>
+            <button class="btn btn-outline-secondary" onclick="window.electronAPI.openPage('listacliente.html')">Lista de cliente</button>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <div class="card shadow">
+                    <div class="card-body p-4">
+
+                        <h3 class="text-center mb-4">Cadastro de Cliente</h3>
+
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nome" id="name">
+                        </div>
+
+                        <div class="mb-4">
+                            <input type="text" class="form-control" placeholder="sobrenome" id="surname">
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-success" id="save-button">Salvar Cliente</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="cliente.js"></script>
 </body>
 
 </html>
