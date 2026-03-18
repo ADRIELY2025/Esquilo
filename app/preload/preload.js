@@ -4,8 +4,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
     openPage: (pageName) => ipcRenderer.invoke('window:open-page', pageName),
     goHome: () => ipcRenderer.invoke('window:open-page', 'index.html'),
     saveProduct: (data) => ipcRenderer.invoke('product:save', data),
+    searchProduct: (data) => ipcRenderer.invoke('product:search', data),
     saveUsuario: (data) => ipcRenderer.invoke('usuario:save', data),
     saveFornecedor: (data) => ipcRenderer.invoke('fornecedor:save', data),
     saveCliente: (data) => ipcRenderer.invoke('cliente:save', data),
+    saveEmpresa: (data) => ipcRenderer.invoke('empresa:save', data),
     
 });

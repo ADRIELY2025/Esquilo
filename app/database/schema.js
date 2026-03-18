@@ -20,3 +20,10 @@ export const fornecedor = pgTable("fornecedor", {
     name: varchar("name", { length: 255 }).notNull(),
     surname: varchar("surname", { length: 255 }).notNull(),
 });
+export const empresa = pgTable("empresa", {
+    id: serial("id").primaryKey(),
+    name: varchar("name", { length: 255 }).notNull(),
+    cnpj: numeric("cnpj", { precision: 18, scale: 4 }).notNull(),
+    phone: numeric("phone", { precision: 18, scale: 4 }).notNull(),
+    address: varchar('address', {length: 255}).notNull()
+});

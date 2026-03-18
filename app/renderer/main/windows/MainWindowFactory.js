@@ -16,6 +16,7 @@ import ProductRepository from '../../../database/repositories/ProductRepository.
 import UsuarioRepository from '../../../database/repositories/UsuarioRepository.js';
 import ClienteRepository from '../../../database/repositories/ClienteRepository.js';
 import FornecedorRepository from '../../../database/repositories/FornecedorRepository.js';
+import EmpresaRepository from '../../../database/repositories/EmpresaRepository.js';
 // Exporta a classe como padrão do módulo, tornando-a disponível para importação em outros arquivos
 export default class MainWindowFactory {
     // Método estático — pode ser chamado direto na classe sem precisar instanciá-la: MainWindowFactory.createWindow()
@@ -60,6 +61,12 @@ export default class MainWindowFactory {
         });
         ipcMain.handle('cliente:save', async (_event, data) => {
             return await ClienteRepository.insert(data)
+        });
+        ipcMain.handle('empresa:save', async (_event, data) => {
+            return await EmpresaRepository.insert(data)
+        });
+        ipcMain.handle('product:search', async (_event, data) => {
+            return await ProductRepository.search(data)
         });
 
         // Carrega o arquivo index.html na janela assim que ela é criada, exibindo a tela inicial
