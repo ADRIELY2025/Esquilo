@@ -2,16 +2,25 @@ const saveButton = document.getElementById('save-button');
 
 saveButton.addEventListener('click', async () => {
     const data = {
-        nome: document.getElementById('nome').value,
-        surname: document.getElementById('surname').value,
+        name: document.getElementById('name').value,
+        cpf: document.getElementById('cpf').value,
+        telefone: document.getElementById('telefone').value,
     };
 
     try {
         const result = await window.electronAPI.saveUsuario(data);
-        console.log('Usuario salvo com sucesso:', result);
-        alert('Usuario salvo com sucesso!');
+        Swal.fire({
+            title: "Cadastro realizado com sucesso!",
+            icon: "success",
+            draggable: true
+        });
+        console.log('cadastro realizado com sucesso:', result);
     } catch (error) {
-        console.error('Erro ao salvar usuario:', error);
-        alert('Erro ao salvar usuario!');
+        Swal.fire({
+            title: "Erro ao cadastrar cliente:",
+            text:  error,
+            icon: "error"
+        });
+        console.error('Erro ao cadastrar cliente', error);
     }
 });

@@ -11,7 +11,7 @@ const table = new DataTable('#tabela', {
             column: data?.order[0]?.column  //Coluna a ser filtrada
         }
         try {
-            const response = await window.electronAPI.searchFornecedor(filter);
+            const response = await window.electronAPI.searchEmpresa(filter);
             callback({
                 draw: response?.draw ?? data?.draw ?? 0,
                 recordsTotal: response?.recordsTotal ?? 0,

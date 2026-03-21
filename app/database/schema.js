@@ -1,29 +1,34 @@
-import { pgTable, varchar, numeric, serial } from "drizzle-orm/pg-core";
+import { pgTable, varchar, numeric, serial, text } from "drizzle-orm/pg-core";
 
 export const products = pgTable("products", {
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 255 }).notNull(),
     price: numeric("price", { precision: 18, scale: 4 }).notNull(),
 });
-export const usuario = pgTable("usuario", {
-    id: serial("id").primaryKey(),
-    nome: varchar("nome", { length: 255 }).notNull(),
-    surname: varchar("surname", { length: 255 }).notNull(),
-});
+
 export const cliente = pgTable("cliente", {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 255 }).notNull(),
-    surname: varchar("surname", { length: 255 }).notNull(),
+    name: text("name").notNull(),
+    cpf: text("cpf").notNull(),
+    telefone: text("telefone").notNull()
 });
+
+export const usuario = pgTable("usuario", {
+    id: serial("id").primaryKey(),
+    name: text("name").notNull(),
+    cpf: text("cpf").notNull(),
+    telefone: text("telefone").notNull()
+});
+
 export const fornecedor = pgTable("fornecedor", {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 255 }).notNull(),
-    surname: varchar("surname", { length: 255 }).notNull(),
+    name: text("name").notNull(),
+    cpf_cnpj: text("cpf_cnpj").notNull(),
+    telefone: text("telefone").notNull()
 });
-export const empresa = pgTable("empresa", {
+export const empresa = pgTable("fornecedor", {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 255 }).notNull(),
-    cnpj: numeric("cnpj", { precision: 18, scale: 4 }).notNull(),
-    phone: numeric("phone", { precision: 18, scale: 4 }).notNull(),
-    address: varchar('address', {length: 255}).notNull()
+    name: text("name").notNull(),
+    cpf_cnpj: text("cpf_cnpj").notNull(),
+    telefone: text("telefone").notNull()
 });
